@@ -20,6 +20,8 @@ module load samtools/1.12
 gunzip /scratch/kjecha/ants/catgen/bam/*.bam.gz
 gunzip /scratch/kjecha/ants/catgen/sam/cut/*.sam.gz
 
+mkdir /scratch/kjecha/ants/catgen/sam/cut
+
 for filename in /scratch/kjecha/ants/catgen/bam/*.bam; do 
 	f=${filename%.bam}
 	file=${f##*/}
