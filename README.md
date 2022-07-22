@@ -11,7 +11,7 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
   
 ---
 ### Step 1: Add species name to their scaffold/chromosome names to distinguish and concatenate target+contaminant genomes  
-- Input: target and contaminant genomes `.fasta`
+- Input: target and contaminant genomes `GENOME.fasta`
 - Script: `scafname.sh`  
 - Output: `scafs.txt` (to verify scaffold names have been changed)    
           `GENOME_name.fasta` (genome with new scaffold names)  
