@@ -14,6 +14,9 @@
 #SBATCH --mail-type BEGIN,END,FAIL,TIME_LIMIT_50
 
 YOURDIR=/scratch/kjecha/ants/catgen/
+mkdir $YOURDIR/bam
+mkdir $YOURDIR/sam
+mkdir $YOURDIR/sam/cut
 
 sed 's/>/& Bacillus_rossius_/' /scratch/kjecha/ants/contam_genomes/Bacillus_rossius.fasta >  $YOURDIR/Bacillus_rossius_name.fasta
 sed 's/>/& Camponotus_fallax_/' /scratch/kjecha/ants/contam_genomes/Camponotus_fallax.fasta >  $YOURDIR/Camponotus_fallax_name.fasta
