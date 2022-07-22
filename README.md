@@ -29,6 +29,6 @@ BE SURE TO CHANGE `YOURDIR` variable IN ALL `.sh` AND `.r` FILES TO YOUR WOKRING
         `/sam/cut/catgen_$READ.sam` (removed headers of file, leaving only data table)  
         `mapplot_$READ.jpeg` (.jpeg image of plot, showing the proportion of reads that mapped to each species' genome)
 
-** Exampe of mapplot output **
+> Exampe of mapplot_$READ.jpeg output 
 ![mapplot for read 564](mapplot_564.jpeg)
 
