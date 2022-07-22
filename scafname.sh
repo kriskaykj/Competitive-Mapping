@@ -18,6 +18,7 @@ mkdir $YOURDIR/bam
 mkdir $YOURDIR/sam
 mkdir $YOURDIR/sam/cut
 
+#Add species name before each scaffold name(to distinguish when combined so there aren't multiple "scaffold 1"		!CHANGE PATH TO GENOME DIRECTOY & NAME OF SPECIES!
 sed 's/>/& Bacillus_rossius_/' /scratch/kjecha/ants/contam_genomes/Bacillus_rossius.fasta >  $YOURDIR/Bacillus_rossius_name.fasta
 sed 's/>/& Camponotus_fallax_/' /scratch/kjecha/ants/contam_genomes/Camponotus_fallax.fasta >  $YOURDIR/Camponotus_fallax_name.fasta
 sed 's/>/& Lasius_alienus_/' /scratch/kjecha/ants/contam_genomes/Lasius_alienus.fasta >  $YOURDIR/Lasius_alienus_name.fasta
@@ -40,9 +41,10 @@ sed 's/>/& Timema_douglasi_/' /scratch/kjecha/ants/contam_genomes/Timema_douglas
 sed 's/>/& Triticum_aestivum_/' /scratch/kjecha/ants/contam_genomes/Triticum_aestivum.fasta >  $YOURDIR/Triticum_aestivum_name.fasta
 
 
-
+#Create file to list the first scaffold name of each genome, to confirm the species name is at the begining of scaffold name
 for FASTAN in $YOURDIR/*_name.fasta; do
 	grep ">" $FASTAN | head -1 >> $YOURDIR/scafs.txt
 done
 
+#Combine all genomes into one large fasta file
 cat $YOURDIR/*_name.fasta > $YOURDIR/catgen.fasta
