@@ -1,8 +1,9 @@
-setwd("/scratch/kjecha/ants/catgen/sam/cut")
+YOURDIR <-"/scratch/kjecha/ants/catgen/"
+setwd(paste(YOURDIR, "/sam/cut", sep=""))
 library(dplyr)
 library(ggplot2)
 
-reads <- as.data.frame(list.files(path = "/scratch/kjecha/ants/catgen/sam/cut"))
+reads <- as.data.frame(list.files(path = (paste(YOURDIR, "/sam/cut", sep=""))))
 reads <- as.data.frame(sub(".sam.*", "", reads[,1]))
 reads <- gsub(".*_","",reads[,1])
 
@@ -10,7 +11,7 @@ reads <- gsub(".*_","",reads[,1])
 head(reads)
 #
 for (row in  reads){
-setwd("/scratch/kjecha/ants/catgen/sam/cut")
+setwd(paste(YOURDIR, "/sam/cut", sep=""))
   print(row)
   sam <- read.table(paste("catgen_", row,".sam", sep = ""), fill = T, row.names=NULL)
 print(head(sam, n=1))
@@ -57,7 +58,7 @@ row.names = TRUE, col.names = TRUE)
 
 print("wrote out file: done")
 
-setwd("/scratch/kjecha/ants/catgen")
+setwd("YOURDIR")
 
  p<- ggplot(sam.filter.sp, aes(x=spec, fill=spec)) + 
     geom_bar(aes(y = (..count..)/sum(..count..))) +
