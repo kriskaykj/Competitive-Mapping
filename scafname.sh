@@ -45,4 +45,4 @@ for FASTAN in $YOURDIR/*_name.fasta; do
 	grep ">" $FASTAN | head -1 >> $YOURDIR/scafs.txt
 done
 
-cat *_name.fasta > $YOURDIR/catgen.fasta
+cat $YOURDIR/*_name.fasta > $YOURDIR/catgen.fasta
