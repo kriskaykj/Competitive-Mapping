@@ -17,20 +17,20 @@ module load gcc/9.3.0
 module load r/4.0.5
 module load samtools/1.12
 
-gunzip /scratch/kjecha/ants/catgen/bam/*.bam.gz
-gunzip /scratch/kjecha/ants/catgen/sam/cut/*.sam.gz
+YOURDIR=/scratch/kjecha/ants/catgen/
+gunzip $YOURDIR/bam/*.bam.gz
+gunzip $YOURDIR/sam/cut/*.sam.gz
 
-mkdir /scratch/kjecha/ants/catgen/sam/cut
 
-for filename in /scratch/kjecha/ants/catgen/bam/*.bam; do 
+for filename in $YOURDIR/bam/*.bam; do 
 	f=${filename%.bam}
 	file=${f##*/}
-	samtools view -h $filename > /scratch/kjecha/ants/catgen/sam/$file.sam 
-	grep -v "@" /scratch/kjecha/ants/catgen/sam/$file.sam > /scratch/kjecha/ants/catgen/sam/cut/$file.sam
+	samtools view -h $filename > $YOURDIR/sam/$file.sam 
+	grep -v "@" $YOURDIR/sam/$file.sam > $YOURDIR/sam/cut/$file.sam
 	gzip $filename
-	gzip /scratch/kjecha/ants/catgen/sam/$file.sam
+	gzip $YOURDIR/sam/$file.sam
 done
 
 Rscript catgen.r
 
-gzip /scratch/kjecha/ants/catgen/sam/cut/*.sam
+gzip $YOURDIR/sam/cut/*.sam
