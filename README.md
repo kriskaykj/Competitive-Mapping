@@ -1,4 +1,4 @@
-# Competitive-Mapping
+# Competitive-Mapping :ant: :dna:
 Used to map potentially contaminated reads against potential contaminant genomes. For use on HPC cluster with bash scripts
 ---
 ## Inputs needed:
@@ -16,7 +16,7 @@ BE SURE TO CHANGE `YOURDIR` variable IN ALL `.sh` AND `.r` FILES TO YOUR WOKRING
           `GENOME_name.fasta` (genome with new scaffold names)  
           `catgen.fasta` (fasta file of all genomes combined)  
 
-### Step 2: Loop htrough contaminated reads to map against catgen.fasta with BWA mem   
+### Step 2: Loop through contaminated reads to map against catgen.fasta with BWA mem   
 - Input: `catgen.fasta`, list of contaminated read IDs(replace $samps)
 - Script: `supermap.sh`
 - Output: `catgen_$READ.bam` (.bam file made for each contaminated read, labelled with ID name)  
