@@ -11,14 +11,14 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
   
 ---
 ### Step 1: Add species name to their scaffold/chromosome names to distinguish and concatenate target+contaminant genomes  
-- Input: target and contaminant genomes (.fasta)
+- Input: target and contaminant genomes `.fasta`
 - Script: `scafname.sh`  
 - Output: `scafs.txt` (to verify scaffold names have been changed)    
           `GENOME_name.fasta` (genome with new scaffold names)  
           `catgen.fasta` (fasta file of all genomes combined)  
 
 ### Step 2: Loop through contaminated reads to map against catgen.fasta with BWA mem   
-- Input: `catgen.fasta`, list of contaminated read IDs(replace $samps)
+- Input: `catgen.fasta`, list of contaminated read IDs(replace `samps`)
 - Script: `supermap.sh`
 - Output: `catgen_$READ.bam` (.bam file made for each contaminated read, labelled with ID name)  
          `catgen_flagstat.txt` (flagstat summary of all read mapping to verify it worked correctly)  
