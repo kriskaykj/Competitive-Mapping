@@ -21,7 +21,7 @@ YOURDIR=/scratch/kjecha/ants/catgen/
 gunzip $YOURDIR/bam/*.bam.gz
 gunzip $YOURDIR/sam/cut/*.sam.gz
 
-
+#Create readable .sam file and remove sam file head (lines that start with @)
 for filename in $YOURDIR/bam/*.bam; do 
 	f=${filename%.bam}
 	file=${f##*/}
@@ -31,6 +31,7 @@ for filename in $YOURDIR/bam/*.bam; do
 	gzip $YOURDIR/sam/$file.sam
 done
 
+#Run the r script file
 Rscript catgen.r
 
 gzip $YOURDIR/sam/cut/*.sam
