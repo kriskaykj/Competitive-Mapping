@@ -6,7 +6,7 @@ Used to map potentially contaminated reads against potential contaminant genomes
 - Directory of reads in .fq format
 - Genomes of target and contaminate species in .fasta format  
   
-BE SURE TO CHANGE `YOURDIR` IN ALL `.sh` AND `.r` FILES! As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.sh`)
+BE SURE TO CHANGE `YOURDIR=path/to/your/dir` IN ALL `.sh` AND `.r` FILES! As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.sh`)
   
 ---
 ### Step 1: Add species name to their scaffold/chromosome names to distinguish and concatenate target+contaminant genomes  
