@@ -1,4 +1,4 @@
-# Competitive-Mapping :ant: :dna:
+# Competitive-Mapping :dna::ant:
 Used to map potentially contaminated reads against potential contaminant genomes. For use on HPC cluster with bash scripts
 ---
 ## Inputs needed:
