@@ -6,7 +6,8 @@ Used to map potentially contaminated reads against potential contaminant genomes
 - Directory of reads in .fq format
 - Genomes of target and contaminate species in .fasta format  
   
-BE SURE TO CHANGE `YOURDIR` variable IN ALL `.sh` AND `.r` FILES TO YOUR WOKRING DIRECTORY! As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.sh`). (Paths to be changed noted in script file)
+BE SURE TO CHANGE `YOURDIR` VARIABLE IN ALL `.sh` AND `.r` FILES TO YOUR WOKRING DIRECTORY!   
+As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.sh`). (Paths to be changed noted in script file)
   
 ---
 ### Step 1: Add species name to their scaffold/chromosome names to distinguish and concatenate target+contaminant genomes  
