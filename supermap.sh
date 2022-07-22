@@ -10,7 +10,7 @@
 #SBATCH --mem=80GB
 #SBATCH --job-name=sprmap
 #SBATCH --export=NONE
-#SBATCH --mail-user kristine.jecha@unil.ch
+#SBATCH --mail-user @unil.ch
 #SBATCH --mail-type BEGIN,END,FAIL,TIME_LIMIT_50
 
 #cat /work/FAC/FBM/DEE/tschwand/default/kjecha/Ants/Decontaminate/contam_genomes/*.fasta > all_contams.fasta
