@@ -13,11 +13,6 @@
 #SBATCH --mail-user kristine.jecha@unil.ch
 #SBATCH --mail-type BEGIN,END,FAIL,TIME_LIMIT_50
 
-#for FASTA in /scratch/kjecha/ants/contam_genomes/*.fasta; do
-#	f=${FASTA%.fasta}
-#	SPEC=${f##*/}
-#	sed 's/>/& $SPEC_/' $FASTA > /scratch/kjecha/ants/catgen/$SPEC_name.fasta
-#done
 
 sed 's/>/& Bacillus_rossius_/' /scratch/kjecha/ants/contam_genomes/Bacillus_rossius.fasta >  /scratch/kjecha/ants/catgen/Bacillus_rossius_name.fasta
 sed 's/>/& Camponotus_fallax_/' /scratch/kjecha/ants/contam_genomes/Camponotus_fallax.fasta >  /scratch/kjecha/ants/catgen/Camponotus_fallax_name.fasta
