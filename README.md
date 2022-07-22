@@ -30,6 +30,6 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
         `/sam/cut/catgen_$READ.sam` (removed headers of file, leaving only data table)  
         `mapplot_$READ.jpeg` (.jpeg image of plot, showing the proportion of reads that mapped to each species' genome)
 
-> Exampe of mapplot_$READ.jpeg output 
+> Exampe of mapplot_$READ.jpeg output looking for contamination in Lasius species
 ![mapplot for read 564](mapplot_564.jpeg)
 
