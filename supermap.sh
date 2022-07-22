@@ -41,5 +41,3 @@ for filename in ./*.bam; do
 
 done
 
-
-#CHROM NAME DUPLICATIONS, NEED TO LABEL WITH SPEC NAME BEFORE CAT
