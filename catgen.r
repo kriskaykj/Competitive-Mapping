@@ -48,7 +48,7 @@ print(head(sam, n=1))
       startsWith(sam.filter$scaf, "Solenopsis_geminata") ~ "Solenopsis_geminata" , 
       startsWith(sam.filter$scaf, "Solenopsis_invicta") ~ "Solenopsis_invicta" ,
       startsWith(sam.filter$scaf, "Timema_douglasi") ~ "Timema_douglasi" , 
-      startsWith(sam.filter$scaf, "Triticum_aestivum") ~ "Triticum_aestivum" ,
+      startsWith(sam.filter$scaf, "Triticum_aestivum") ~ "Triticum_aestivum" 
     ))
   
   print("add species names: done")
