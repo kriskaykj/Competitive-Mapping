@@ -61,7 +61,7 @@ row.names = TRUE, col.names = TRUE)
 
 print("wrote out file: done")
 
-setwd("YOURDIR")
+setwd(YOURDIR)
 #create mapplot for the sample, output at .jpeg
  p<- ggplot(sam.filter.sp, aes(x=spec, fill=spec)) + 
     geom_bar(aes(y = (..count..)/sum(..count..))) +
