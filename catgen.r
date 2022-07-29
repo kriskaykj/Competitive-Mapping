@@ -72,7 +72,7 @@ for (row in  reads){
   #create file to check that species names were added
   uniques <- (sam.filter.sp[!duplicated(sam.filter.sp$spec), ])
 
-setwd(YOURDIR) 
+
  #create file to check that species names were added
   #write.table(uniques, paste("sam.filter_",row ,".txt", sep=""), 
   #            append = FALSE, sep = " ", dec = ".",
@@ -80,7 +80,8 @@ setwd(YOURDIR)
   
   print("wrote out file: done")
   
- 					
+ setwd(paste(YOURDIR, "/mapplots", sep=""))		
+  
   #create mapplot for the sample, output at .jpeg
    p<- ggplot(sam.filter.sp, aes(x=spec, fill=spec)) + 
       geom_bar(aes(y = (..count..)/sum(..count..))) +
@@ -109,7 +110,7 @@ setwd(YOURDIR)
   
 }
 print("loop:done")
-
+setwd(YOURDIR) 
 #remove dupilcate cols or every other
 summap <- as.data.frame(summap[ , !duplicated(colnames(summap))])
 
