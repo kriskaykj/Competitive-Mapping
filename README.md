@@ -2,8 +2,8 @@
 Used to map potentially contaminated reads against potential contaminant genomes. For use on HPC cluster with bash scripts
 ---
 ## Inputs needed:
-- List of contaminated read IDs
-- Directory of reads in .fq format
+- List of contaminated sample IDs
+- Directory of sample reads in .fq format
 - Genomes of target and contaminate species in .fasta format  
   
 BE SURE TO CHANGE `YOURDIR` VARIABLE IN ALL `.sh` AND `.r` FILES TO YOUR WORKING DIRECTORY!   
@@ -20,7 +20,7 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
 ### Step 2: Loop through contaminated reads to map against catgen.fasta with BWA mem   
 - Input: `catgen.fasta`, list of contaminated read IDs(replace `samps`)
 - Script: `supermap.sh`
-- Output: `catgen_$READ.bam` (.bam file made for each contaminated read, labelled with ID name)  
+- Output: `catgen_$READ.bam` (.bam file made for each contaminated sample, labelled with sample ID name)  
          `catgen_flagstat.txt` (flagstat summary of all read mapping to verify it worked correctly)  
            
 ### Step 3: Convert .bam to .sam file and run R script to create plots of read mapping   
@@ -28,7 +28,7 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
 - Script:`catgen.sh`, `catgen.r`  
 - Output:`/sam/catgen_$READ.sam` (readable .sam output)  
         `/sam/cut/catgen_$READ.sam` (removed headers of file, leaving only data table)  
-        `/mapplots/mapplot_$READ.jpeg` (.jpeg image of plot, showing the proportion of reads that mapped to each species' genome)  
+        `/mapplots/mapplot_$READ.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
         `mapplot_summary.jpeg` (.jpeg image of summary of all sample mapping)
 
  Exampe of mapplot_$READ.jpeg output looking for contamination in Lasius species  
