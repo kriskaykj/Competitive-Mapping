@@ -34,6 +34,6 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
 > Exampe of mapplot_$READ.jpeg output looking for contamination in Lasius species
 ![mapplot for read 564](mapplot_564.jpeg)  
 
-> Exampe of mapplot_summary.jpeg output looking for contamination in Lasius species in 3 ant species
+> Exampe of mapplot_summary.jpeg output looking for contamination in Lasius species of 3 ant species
 ![summary of mapplots](mapplot_summary.jpeg)  
 
