@@ -20,6 +20,7 @@ module load samtools/1.12
 YOURDIR=/scratch/kjecha/ants/catgen/
 gunzip $YOURDIR/bam/*.bam.gz
 gunzip $YOURDIR/sam/cut/*.sam.gz
+mkdir $YOURDIR/mapplots
 
 #Create readable .sam file and remove sam file head (lines that start with @)
 for filename in $YOURDIR/bam/*.bam; do 
