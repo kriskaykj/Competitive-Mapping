@@ -28,8 +28,12 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
 - Script:`catgen.sh`, `catgen.r`  
 - Output:`/sam/catgen_$READ.sam` (readable .sam output)  
         `/sam/cut/catgen_$READ.sam` (removed headers of file, leaving only data table)  
-        `mapplot_$READ.jpeg` (.jpeg image of plot, showing the proportion of reads that mapped to each species' genome)
+        `mapplot_$READ.jpeg` (.jpeg image of plot, showing the proportion of reads that mapped to each species' genome)  
+        `mapplot_summary.jpeg` (.jpeg image of summary of all sample mapping)
 
 > Exampe of mapplot_$READ.jpeg output looking for contamination in Lasius species
-![mapplot for read 564](mapplot_564.jpeg)
+![mapplot for read 564](mapplot_564.jpeg)  
+
+> Exampe of mapplot_summary.jpeg output looking for contamination in Lasius species in 3 ant species
+![summary of mapplots](mapplot_summary.jpeg)  
 
