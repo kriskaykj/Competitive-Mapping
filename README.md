@@ -37,5 +37,6 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
 Exampe of mapplot_summary.jpeg output looking for contamination in Lasius species of 3 ant species     
  (possible contamination by Formica)  
  
-![summary of mapplots](mapplot_summary.jpeg)  
+![summary of mapplots](mapplot_summary.jpeg)    
 
+## Coming Soon: filtering out reads mapping to contaminant
