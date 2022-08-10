@@ -43,13 +43,13 @@ Exampe of mapplot_summary.jpeg output looking for contamination in Lasius specie
 - Input: `/sam/cut/catgen_$SAMPLE.sam`
 - Script: `filterReads.sh`   
           `filterReads.r`
-- Output: `targetReads.txt`     
+- Output: `targetReads.txt` (summary list of all clean reads in all contaminated samples)     
 
 ### Step 5: Filter out reads that don't map to target species in sample files   
 - Input: `targetReads.txt`   
           `$SAMPLE.fq.gz`(contaminated .fq files)
 - Script: `bbmap.sh`    
           `idlist.R`
-- Output: `/IDS/$SAMPLE.txt`      
-          `/Filtered/$SAMPLE.filtered.fq.gz
-          
+- Output: `/IDS/$SAMPLE_ID.txt`(reformatted list of clean reads for each sample)      
+          `/Filtered/$SAMPLE.filtered.fq.gz` (.fq sample containing only clean/uncontaminated reads)  
+####You can now use these filtered FASTq files to perform genotype analyses!      
