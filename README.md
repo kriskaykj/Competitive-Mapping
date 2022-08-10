@@ -52,4 +52,4 @@ Exampe of mapplot_summary.jpeg output looking for contamination in Lasius specie
           `idlist.R`
 - Output: `/IDS/$SAMPLE_ID.txt`(reformatted list of clean reads for each sample)      
           `/Filtered/$SAMPLE.filtered.fq.gz` (.fq sample containing only clean/uncontaminated reads)  
-####You can now use these filtered FASTq files to perform genotype analyses!      
+#### You can now use these filtered FASTq files to perform genotype analyses!      
