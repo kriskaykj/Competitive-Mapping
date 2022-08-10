@@ -18,8 +18,8 @@ module load r/4.0.5
 module load bbmap/38.63
 
 mkdir IDS
-
-OUT=/scratch/kjecha/ants/antcontam/Lasiusreads/Lasfiltered/
+mkdir Filtered
+OUT=/scratch/kjecha/ants/antcontam/Lasiusreads/Filtered/
 IDDIR=/scratch/kjecha/ants/antcontam/Lasiusreads/IDS/
 SAMP=/work/FAC/FBM/DEE/tschwand/operation_fourmis/glavanc1/Lasius/clean/
 
