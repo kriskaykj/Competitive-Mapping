@@ -1,7 +1,7 @@
 YOURDIR <-"/scratch/kjecha/ants/antcontam/Lasiusreads"
 setwd(YOURDIR)
 
-fr <- read.table("lasiusReads.txt", header = F)
+fr <- read.table("targetReads.txt", header = F)
 
 for (i in fr){
   SAMP <- i[1]
