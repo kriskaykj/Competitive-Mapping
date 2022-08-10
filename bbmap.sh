@@ -10,13 +10,14 @@
 #SBATCH --mem=80GB
 #SBATCH --job-name=BBMAP
 #SBATCH --export=NONE
-#SBATCH --mail-user kristine.jecha@unil.ch
+#SBATCH --mail-user @unil.ch
 #SBATCH --mail-type BEGIN,END,FAIL,TIME_LIMIT_50
 
 module load gcc/9.3.0
 module load r/4.0.5
 module load bbmap/38.63
 
+mkdir IDS
 
 OUT=/scratch/kjecha/ants/antcontam/Lasiusreads/Lasfiltered/
 IDDIR=/scratch/kjecha/ants/antcontam/Lasiusreads/IDS/
