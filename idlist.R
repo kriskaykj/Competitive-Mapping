@@ -10,7 +10,7 @@ for (i in fr){
   outfile <- as.data.frame(i)
   outfile = outfile[-1,]
 print(SAMP)
-setwd("/scratch/kjecha/ants/antcontam/Lasiusreads/IDS")
+setwd(paste(YOURDIR, "/IDS", sep=""))
   write.table(outfile, paste(SAMP,"_ID.txt", sep=""), 
               append = FALSE, sep = " ", dec = ".",
               row.names = F , col.names = F, quote = F)
