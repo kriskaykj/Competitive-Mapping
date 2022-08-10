@@ -65,6 +65,6 @@ for (row in  reads){
 }
 setwd(YOURDIR)
 
-write.table(formica, "lasiusReads.txt", 
+write.table(formica, "targetReads.txt", 
             append = FALSE, sep = " ", dec = ".",
             row.names = F , col.names = TRUE, quote = F)
