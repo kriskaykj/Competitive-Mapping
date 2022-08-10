@@ -18,17 +18,17 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
           `catgen.fasta` (fasta file of all genomes combined)  
 
 ### Step 2: Loop through contaminated reads to map against catgen.fasta with BWA mem   
-- Input: `catgen.fasta`, list of contaminated read IDs(replace `samps`)
+- Input: `catgen.fasta`, list of contaminated read IDs(replace `samps`), `$SAMPLE.fq.gz`(contaminated .fq files)
 - Script: `supermap.sh`
-- Output: `catgen_$READ.bam` (.bam file made for each contaminated sample, labelled with sample ID name)  
+- Output: `catgen_$SAMPLE.bam` (.bam file made for each contaminated sample, labelled with sample ID name)  
          `catgen_flagstat.txt` (flagstat summary of all read mapping to verify it worked correctly)  
            
 ### Step 3: Convert .bam to .sam file and run R script to create plots of read mapping   
-- Input:`catgen_$READ.bam`
+- Input:`catgen_$SAMPLE.bam`
 - Script:`catgen.sh`, `catgen.r`  
-- Output:`/sam/catgen_$READ.sam` (readable .sam output)  
-        `/sam/cut/catgen_$READ.sam` (removed headers of file, leaving only data table)  
-        `/mapplots/mapplot_$READ.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
+- Output:`/sam/catgen_$SAMPLE.sam` (readable .sam output)  
+        `/sam/cut/catgen_$SAMPLE.sam` (removed headers of file, leaving only data table)  
+        `/mapplots/mapplot_$SAMPLE.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
         `mapplot_summary.jpeg` (.jpeg image of summary of all sample mapping)
 
  Exampe of mapplot_$READ.jpeg output looking for contamination in Lasius species  
@@ -39,4 +39,17 @@ Exampe of mapplot_summary.jpeg output looking for contamination in Lasius specie
  
 ![summary of mapplots](mapplot_summary.jpeg)    
 
-## Coming Soon: filtering out reads mapping to contaminant
+### Step 4: Create list of reads in each sample that map prefeably to the target species   
+- Input: `/sam/cut/catgen_$SAMPLE.sam`
+- Script: `filterReads.sh`   
+          `filterReads.r`
+- Output: `targetReads.txt`     
+
+### Step 5: Filter out reads that don't map to target species in sample files   
+- Input: `targetReads.txt`   
+          `$SAMPLE.fq.gz`(contaminated .fq files)
+- Script: `bbmap.sh`    
+          `idlist.R`
+- Output: `/IDS/$SAMPLE.txt`      
+          `/Filtered/$SAMPLE.filtered.fq.gz
+          
