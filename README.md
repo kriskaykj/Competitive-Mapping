@@ -1,5 +1,5 @@
 # Competitive-Mapping :dna::ant:
-Used to map potentially contaminated reads against potential contaminant genomes. For use on HPC cluster with bash scripts
+Used to map potentially contaminated reads against potential contaminant genomes and filter out contaminated reads. For use on HPC cluster with bash scripts
 ---
 ## Inputs needed:
 - List of contaminated sample IDs
@@ -17,7 +17,7 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
           `GENOME_name.fasta` (genome with new scaffold names)  
           `catgen.fasta` (fasta file of all genomes combined)  
 
-### Step 2: Loop through contaminated reads to map against catgen.fasta with BWA mem   
+### Step 2: Loop through contaminated samples to map against catgen.fasta with BWA mem   
 - Input: `catgen.fasta`, list of contaminated read IDs(replace `samps`), `$SAMPLE.fq.gz`(contaminated .fq files)
 - Script: `supermap.sh`
 - Output: `catgen_$SAMPLE.bam` (.bam file made for each contaminated sample, labelled with sample ID name)  
@@ -31,7 +31,7 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
         `/mapplots/mapplot_$SAMPLE.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
         `mapplot_summary.jpeg` (.jpeg image of summary of all sample mapping)
 
- Exampe of mapplot_$READ.jpeg output looking for contamination in Lasius species  
+ Exampe of mapplot_$SAMPLE.jpeg output looking for contamination in Lasius species  
 ![mapplot for read 564](mapplot_564.jpeg)  
 
 Exampe of mapplot_summary.jpeg output looking for contamination in Lasius species of 3 ant species     
