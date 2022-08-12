@@ -33,6 +33,6 @@ for filename in $YOURDIR/bam/*.bam; do
 done
 
 #Run the r script file
-Rscript catgen.r
+Rscript 3catgen.r
 
 gzip $YOURDIR/sam/cut/*.sam
