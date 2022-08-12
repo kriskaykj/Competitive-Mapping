@@ -3,6 +3,7 @@ setwd(YOURDIR)
 
 fr <- read.table("targetReads.txt", header = F)
 
+#Split up targetReads.txt table by column, creating an individual file for each sample with all correctly mapping reads
 for (i in fr){
   SAMP <- i[1]
     i <- na.omit(i)
