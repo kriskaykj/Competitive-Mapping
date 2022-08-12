@@ -24,6 +24,6 @@ mkdir IDS
 mkdir Filtered
 
 #Run the r script file
-Rscript filterReads.r
+Rscript 4filterReads.r
 
 #gzip $YOURDIR/sam/cut/*.sam
