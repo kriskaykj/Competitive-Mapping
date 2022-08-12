@@ -12,20 +12,20 @@ As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.s
 ---
 ### Step 1: Add species name to their scaffold/chromosome names to distinguish and concatenate target+contaminant genomes  
 - Input: target and contaminant genomes `GENOME.fasta`
-- Script: `scafname.sh`  (replace GENDIR to genome directory path)
+- Script: `1scafname.sh`  (replace GENDIR to genome directory path)
 - Output: `scafs.txt` (to verify scaffold names have been changed)    
           `GENOME_name.fasta` (genome with new scaffold names)  
           `catgen.fasta` (fasta file of all genomes combined)  
 
 ### Step 2: Loop through contaminated samples to map against catgen.fasta with BWA mem   
 - Input: `catgen.fasta`, list of contaminated read IDs(replace `samps`), `$SAMPLE.fq.gz`(contaminated .fq files)
-- Script: `supermap.sh`
+- Script: `2supermap.sh`
 - Output: `catgen_$SAMPLE.bam` (.bam file made for each contaminated sample, labelled with sample ID name)  
          `catgen_flagstat.txt` (flagstat summary of all read mapping to verify it worked correctly)  
            
 ### Step 3: Convert .bam to .sam file and run R script to create plots of read mapping   
 - Input:`catgen_$SAMPLE.bam`
-- Script:`catgen.sh`, `catgen.r`  
+- Script:`3catgen.sh`, `3catgen.r`  
 - Output:`/sam/catgen_$SAMPLE.sam` (readable .sam output)  
         `/sam/cut/catgen_$SAMPLE.sam` (removed headers of file, leaving only data table)  
         `/mapplots/mapplot_$SAMPLE.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
@@ -41,14 +41,14 @@ Exampe of mapplot_summary.jpeg output looking for contamination in Lasius specie
 
 ### Step 4: Create list of reads in each sample that map prefeably to the target species   
 - Input: `/sam/cut/catgen_$SAMPLE.sam`
-- Script: `filterReads.sh`   
-          `filterReads.r`
+- Script: `4filterReads.sh`   
+          `4filterReads.r`
 - Output: `targetReads.txt` (summary list of all clean reads in all contaminated samples)     
           `/IDS/$SAMPLE_ID.txt`(reformatted list of clean reads for each sample)   
 
 ### Step 5: Filter out reads that don't map to target species in sample files   
 - Input:  `$SAMPLE.fq.gz`(contaminated .fq files)  
-- Script: `bbmap.sh`    
+- Script: `5bbmap.sh`    
 - Output:  `/Filtered/$SAMPLE.filtered.fq.gz` (.fq sample containing only clean/uncontaminated reads)   
            
 #### You can now use these filtered FASTq files to perform genotype analyses!      
