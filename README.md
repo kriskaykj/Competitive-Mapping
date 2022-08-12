@@ -6,13 +6,13 @@ Used to map potentially contaminated reads against potential contaminant genomes
 - Directory of sample reads in .fq format
 - Genomes of target and contaminate species in .fasta format  
   
-!BE SURE TO CHANGE `YOURDIR` VARIABLE IN ALL `.sh` AND `.r` FILES TO YOUR WORKING DIRECTORY!   
+!BE SURE TO **CHANGE `YOURDIR`** VARIABLE IN ALL `.sh` AND `.r` FILES TO YOUR WORKING DIRECTORY!   
 As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.sh`). (Paths to be changed noted in script file)
   
 ---
 ### Step 1: Add species name to their scaffold/chromosome names to distinguish and concatenate target+contaminant genomes  
 - Input: target and contaminant genomes `GENOME.fasta`
-- Script: `1scafname.sh`  (!replace GENDIR to genome directory path)
+- Script: `1scafname.sh`  (**!replace** GENDIR to genome directory path)
 - Output: `scafs.txt` (to verify scaffold names have been changed)    
           `GENOME_name.fasta` (genome with new scaffold names)  
           `catgen.fasta` (fasta file of all genomes combined)  
@@ -42,13 +42,13 @@ Exampe of mapplot_summary.jpeg output looking for contamination in Lasius specie
 ### Step 4: Create list of reads in each sample that map prefeably to the target species   
 - Input: `/sam/cut/catgen_$SAMPLE.sam`
 - Script: `4filterReads.sh`   
-          `4filterReads.r` (!replace species names and target species)  
+          `4filterReads.r` (**!replace** species names and target species)  
 - Output: `targetReads.txt` (summary list of all clean reads in all contaminated samples)     
           `/IDS/$SAMPLE_ID.txt`(reformatted list of clean reads for each sample)   
 
 ### Step 5: Filter out reads that don't map to target species in sample files   
 - Input:  `$SAMPLE.fq.gz`(contaminated .fq files)  
-- Script: `5bbmap.sh` (!replace `OUT`, `IDDIR`, and `SAMP` path to directories)    
+- Script: `5bbmap.sh` (**!replace** `OUT`, `IDDIR`, and `SAMP` path to directories)    
 - Output:  `/Filtered/$SAMPLE.filtered.fq.gz` (.fq sample containing only clean/uncontaminated reads)   
            
 #### You can now use these filtered FASTq files to perform genotype analyses!      
