@@ -22,7 +22,7 @@ reads <- gsub(".*_","",reads[,1])
 #confirm sample ID in read variable
 head(reads)
 
-
+#initiate empty data frame to be added to
 formica <- data.frame()
 
 for (row in  reads){
@@ -54,17 +54,19 @@ for (row in  reads){
   print("add species names: done")
   print(colnames(sam.filter.sp))
   
-  #create file to check that species names were added
-  uniques <- (sam.filter.sp[!duplicated(sam.filter.sp$spec), ])
+  #create dataframe to check that species names were added
+  #uniques <- (sam.filter.sp[!duplicated(sam.filter.sp$spec), ])
   
+  #select only reads mapping to target species, in this case Lasius     !CHANGE TARGET SPECIES NAME!
   onlyForm<-subset(sam.filter.sp, spec=='Lasius')
   Freads <- as.data.frame(onlyForm$qname)
   colnames(Freads) <- row
+  #create a cloumn of all correctly mapping reads from this sample (sample ID as colname)
   formica <- cbind.fill(formica, Freads)  
   
 }
 setwd(YOURDIR)
-
+#write a table with columns of each sample ID containing the correctly mapping reads to be kept
 write.table(formica, "targetReads.txt", 
             append = FALSE, sep = " ", dec = ".",
             row.names = F , col.names = TRUE, quote = F)
