@@ -14,16 +14,12 @@
 #SBATCH --mail-type BEGIN,END,FAIL,TIME_LIMIT_50
 
 module load gcc/9.3.0
-module load r/4.0.5
 module load bbmap/38.63
 
-mkdir IDS
-mkdir Filtered
+
 OUT=/scratch/kjecha/ants/antcontam/Lasiusreads/Filtered/
 IDDIR=/scratch/kjecha/ants/antcontam/Lasiusreads/IDS/
 SAMP=/work/FAC/FBM/DEE/tschwand/operation_fourmis/glavanc1/Lasius/clean/
-
-#Rscript idlist.R
 
 
 for filename in $IDDIR/*.txt; do 
