@@ -20,7 +20,8 @@ module load samtools/1.12
 YOURDIR=/scratch/kjecha/ants/antcontam/Competitive-Mapping
 #gunzip $YOURDIR/bam/*.bam.gz
 gunzip $YOURDIR/sam/cut/*.sam.gz
-
+mkdir IDS
+mkdir Filtered
 
 #Run the r script file
 Rscript filterReads.r
