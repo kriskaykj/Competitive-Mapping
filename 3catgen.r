@@ -27,7 +27,7 @@ summap <- data.frame()
 for (row in  reads){
   setwd(paste(YOURDIR, "/sam/cut", sep=""))
   print(row)
-  sam <- read.table(paste("catgen_", row,".sam", sep = ""), fill = T, row.names=NULL)
+  sam <- read.table(paste("catgen_", row,".sam.gz", sep = ""), fill = T, row.names=NULL)
   #print(head(sam, n=1))
   
   #create column names based on .sam file output
