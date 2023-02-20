@@ -16,7 +16,10 @@
 YOURDIR=/scratch/kjecha/ants/catgen/
 GENDIR=/scratch/kjecha/ants/antcontam/antgenomes
 
-mkdir $YOURDIR/bam
+module load gcc/10.4.0
+module load bwa/0.7.17
+module load samtools/1.15.1
+
 mkdir $YOURDIR/sam
 mkdir $YOURDIR/sam/cut
 
@@ -50,3 +53,7 @@ done
 
 #Combine all genomes into one large fasta file
 cat $YOURDIR/*_name.fasta > $YOURDIR/catgen.fasta
+
+#Index catgen to prepare for BWA
+bwa index $YOURDIR/catgen.fasta
+
