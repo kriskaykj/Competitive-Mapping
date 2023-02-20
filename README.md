@@ -10,6 +10,11 @@ Used to map potentially contaminated reads against potential contaminant genomes
 As well as read(`supermap.sh`) and contaminated genome diretory path(`scafname.sh`). (Paths to be changed noted in script file)
   
 ---
+### (Optional) Step 0: Run Competitive Mapping pipeline on multiple genra quickly  
+Create folders named after each genus, copy in scripts 2-5 and change genus-specific directorie paths for each genus folder.   
+- Script: `0multirun.sh`  (**!replace** YOURDIR to genome directory path)
+Example of run: `sbatch 0multirun.sh Myr 2`, this runs step 2supermap.sh from the Myr (Myrmica genus) folder
+
 ### Step 1: Add species name to their scaffold/chromosome names to distinguish and concatenate target+contaminant genomes  
 - Input: target and contaminant genomes `GENOME.fasta`
 - Script: `1scafname.sh`  (**!replace** GENDIR to genome directory path)
