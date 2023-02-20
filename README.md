@@ -32,7 +32,7 @@ Example of run: `sbatch 0multirun.sh Myr 2`, this runs step 2supermap.sh from th
 - Input:`catgen_$SAMPLE.bam`
 - Script:`3catgen.sh`, `3catgen.r`  
 - Output:`/sam/cut/catgen_$SAMPLE.sam` (removed headers of file, leaving only data table)    
-       (optional, uncomment to add) `/mapplots/mapplot_$SAMPLE.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
+       (optional, uncomment to add) `/mapplot_$SAMPLE.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
         `mapplot_summary.jpeg` (.jpeg image of summary of all sample mapping)
 
  Exampe of mapplot_$SAMPLE.jpeg output looking for contamination in Lasius species  
