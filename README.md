@@ -23,17 +23,16 @@ Example of run: `sbatch 0multirun.sh Myr 2`, this runs step 2supermap.sh from th
           `catgen.fasta` (fasta file of all genomes combined)  
 
 ### Step 2: Loop through contaminated samples to map against catgen.fasta with BWA mem   
-- Input: `catgen.fasta`, list of contaminated read IDs(**!replace** `samps`), `$SAMPLE.fq.gz`(contaminated .fq files)
+- Input: `catgen.fasta`, directory path of contaminated sample IDs(**!replace** `SAMPS`), `$SAMPLE.fq.gz`(contaminated .fq files)
 - Script: `2supermap.sh`
-- Output: `catgen_$SAMPLE.bam` (.bam file made for each contaminated sample, labelled with sample ID name)  
-         `catgen_flagstat.txt` (flagstat summary of all read mapping to verify it worked correctly)  
+- Output: `/sam/catgen_$SAMPLE.sam` (.sam file made for each contaminated sample, labelled with sample ID name)  
+         
            
-### Step 3: Convert .bam to .sam file and run R script to create plots of read mapping   
+### Step 3: Run R script to create plots of read mapping   
 - Input:`catgen_$SAMPLE.bam`
 - Script:`3catgen.sh`, `3catgen.r`  
-- Output:`/sam/catgen_$SAMPLE.sam` (readable .sam output)  
-        `/sam/cut/catgen_$SAMPLE.sam` (removed headers of file, leaving only data table)  
-        `/mapplots/mapplot_$SAMPLE.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
+- Output:`/sam/cut/catgen_$SAMPLE.sam` (removed headers of file, leaving only data table)    
+       (optional, uncomment to add) `/mapplots/mapplot_$SAMPLE.jpeg` (.jpeg image of plot, showing the proportion of reads in that sample that mapped to each species' genome)  
         `mapplot_summary.jpeg` (.jpeg image of summary of all sample mapping)
 
  Exampe of mapplot_$SAMPLE.jpeg output looking for contamination in Lasius species  
