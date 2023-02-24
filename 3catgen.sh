@@ -13,22 +13,20 @@
 #SBATCH --mail-user @unil.ch
 #SBATCH --mail-type BEGIN,END,FAIL,TIME_LIMIT_50
 
-module load gcc/9.3.0
-module load r/4.0.5
-module load samtools/1.12
+module load gcc
+module load r
+module load samtools
 
 YOURDIR=/scratch/kjecha/ants/catgen/
 
 gunzip $YOURDIR/sam/cut/*.sam.gz
 
 #Create readable .sam file and remove sam file head (lines that start with @)
-for filename in $YOURDIR/bam/*.bam; do 
-	f=${filename%.bam}
+for filename in $YOURDIR/sam/*.sam; do 
+	f=${filename%.sam}
 	file=${f##*/}
-	samtools view -h $filename > $YOURDIR/sam/$file.sam 
 	grep -v "@" $YOURDIR/sam/$file.sam > $YOURDIR/sam/cut/$file.sam
 	gzip $filename
-	gzip $YOURDIR/sam/$file.sam
 done
 
 #Run the r script file
